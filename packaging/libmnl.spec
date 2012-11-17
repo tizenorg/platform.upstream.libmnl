@@ -23,7 +23,7 @@ and easy to get wrong. This library aims to provide simple helpers
 that allows you to re-use code and to avoid re-inventing the wheel.
 
 %package devel
-Requires:       %lname = %version
+Requires:       %name = %version
 Summary:        Development files for libmnl
 Group:          Development/Libraries/C and C++
 
