@@ -8,10 +8,7 @@ Url:            http://netfilter.org/projects/libmnl/
 
 #Git-Clone:	git://git.netfilter.org/libmnl
 Source:         ftp://ftp.netfilter.org/pub/libmnl/%name-%version.tar.bz2
-Source2:        ftp://ftp.netfilter.org/pub/libmnl/%name-%version.tar.bz2.sig
-Source9:        baselibs.conf
-BuildRoot:      %{_tmppath}/%{name}-%{version}-build
-#git#BuildRequires:	autoconf, automake >= 1.6
+Source2:        baselibs.conf
 BuildRequires:  libtool
 BuildRequires:  pkgconfig >= 0.21
 
