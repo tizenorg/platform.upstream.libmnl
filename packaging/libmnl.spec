@@ -9,6 +9,7 @@ Url:            http://netfilter.org/projects/libmnl/
 #Git-Clone:	git://git.netfilter.org/libmnl
 Source:         ftp://ftp.netfilter.org/pub/libmnl/%name-%version.tar.bz2
 Source2:        baselibs.conf
+Source1001: 	libmnl.manifest
 BuildRequires:  libtool
 BuildRequires:  pkgconfig >= 0.21
 
@@ -33,6 +34,7 @@ that allows you to re-use code and to avoid re-inventing the wheel.
 
 %prep
 %setup -q
+cp %{SOURCE1001} .
 
 %build
 if [ ! -e configure ]; then
@@ -49,11 +51,13 @@ make %{?_smp_mflags}
 %postun -p /sbin/ldconfig
 
 %files
+%manifest %{name}.manifest
 %license COPYING
 %defattr(-,root,root)
 %_libdir/libmnl.so.0*
 
 %files -n %name-devel
+%manifest %{name}.manifest
 %defattr(-,root,root)
 %_includedir/libmnl*
 %_libdir/libmnl.so
